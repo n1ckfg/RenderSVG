@@ -1,10 +1,16 @@
 //http://forum.processing.org/one/topic/make-a-dot-follow-a-svg-path.html
 
+//to do: 
+//capture svg to image
+//get brush color from average pixels at each of the eight sample points
+//modify to run in a loop in a buffer instead of in draw
+//add batching, directory selection, and saving to disk
+
 PShape s; 
 ArrayList ve; 
 int nve = 1;
-float slen = 5.0; // max length of segments 
-float sf = 0.8; // scale factor for the image 
+float slen = 2.0; // 5.0 max length of segments 
+float sf = 1.0; // 0.8 scale factor for the image 
 String svgFile = "test.svg"; 
 boolean loadNewFile = false;
 boolean ready = false;
@@ -13,10 +19,11 @@ int brushSize = 10;
 int brushSizeMin = 8;
 int brushSizeMax = 12;
 float brushRandom = 2;
-float leakRandom = 0.4; //0-1
+float leakRandom = 0.9; //0-1
 float brushScatter = 5;
-color brushColor = color(0,255,0);
+color brushColor = color(150,20,100,200);
 color bgColor = color(255);
+float distLimit = 10;
 
 void setup() { 
   brush = loadImage("brush.png");
@@ -45,11 +52,12 @@ void setup() {
 
 void draw(){
   //background(bgColor);
-  stroke(255,0,0);
-  strokeWeight(2);
+  //stroke(255,0,0);
+  //strokeWeight(2);
   if(ready){ 
     if (nve < ve.size()) { 
-      if(((Point) ve.get(nve)).z != -10.0) {// a way to separate distinct paths 
+      //replaced with distLimit check...we want to keep looking for paths
+      //if(((Point) ve.get(nve)).z != -10.0) {// a way to separate distinct paths 
         PVector p1 = new PVector(((Point) ve.get(nve-1)).x, ((Point) ve.get(nve-1)).y);
         PVector p2 = new PVector(((Point) ve.get(nve)).x, ((Point) ve.get(nve)).y);
         
@@ -64,6 +72,7 @@ void draw(){
         float bs = 0;
         float lr = random(1);
         float dst = dist(p1.x,p1.y,p2.x,p2.y);
+        
         if (lr < leakRandom) {
           bs = brushSize / dst;
         } else {
@@ -72,21 +81,24 @@ void draw(){
         if (bs < brushSizeMin) bs = brushSizeMin;
         if (bs > brushSizeMax) bs = brushSizeMax;
         bs += random(brushRandom) - random(brushRandom);
-        doBrush(p1,bs,false,brushColor);
-        doBrush(p2,bs,false,brushColor);
         
-        doBrush(pa,bs,false,brushColor);
-        doBrush(pb,bs,false,brushColor);
-        doBrush(pc,bs,false,brushColor);
-
-        doBrush(paa,bs,true,brushColor);
-        doBrush(pbb,bs,true,brushColor);
-        doBrush(pcc,bs,true,brushColor);
+        if (dst <= distLimit) {
+          doBrush(p1,bs,false,brushColor);
+          doBrush(p2,bs,false,brushColor);
+          
+          doBrush(pa,bs,false,brushColor);
+          doBrush(pb,bs,false,brushColor);
+          doBrush(pc,bs,false,brushColor);
+  
+          doBrush(paa,bs,true,brushColor);
+          doBrush(pbb,bs,true,brushColor);
+          doBrush(pcc,bs,true,brushColor);
+        }
         
         //line(p1.x, p1.y, p2.x, p2.y);
         //ellipse( ((Point) ve.get(nve)).x, ((Point) ve.get(nve)).y, 2, 2 ); 
         nve++; 
-      }
+      //}
     } else { // restart drawing 
       background(200); 
       nve = 1; 
