@@ -6,6 +6,10 @@
 //modify to run in a loop in a buffer instead of in draw
 //add batching, directory selection, and saving to disk
 
+int sW = 550;
+int sH = 400;
+boolean saveFile = true;
+
 PShape s; 
 ArrayList ve; 
 int nve = 1;
@@ -15,24 +19,29 @@ String svgFile = "test.svg";
 boolean loadNewFile = false;
 boolean ready = false;
 PImage brush;
-int brushSize = 10;
-int brushSizeMin = 8;
+int brushSize = 5;
+int brushSizeMin = 3;
 int brushSizeMax = 12;
 float brushRandom = 2;
-float leakRandom = 0.9; //0-1
-float brushScatter = 5;
-color brushColor = color(150,20,100,200);
-color bgColor = color(255);
-float distLimit = 10;
+float leakRandom = 0.6; //0-1
+float brushScatter = 2;
+color brushColor = color(0,0,0,50);
+color bgColor = color(155);
+float distLimit = 10.0;//1.95;
+float gravity = 3.0;
+//PImage grab;
+PGraphics alphaImg;
+boolean firstRun = true;
 
 void setup() { 
-  brush = loadImage("brush.png");
-  imageMode(CENTER);
+  size(sW,sH); 
+  brush = loadImage("brush2.png");
+  //grab = createImage(width,height,RGB);
+  alphaImg = createGraphics(width,height,JAVA2D);
 
   ve = new ArrayList(); 
   
-  frameRate(120); 
-  size(550, 400); 
+  frameRate(60); 
   if (loadNewFile) {
     selectInput("Select a file to process:", "fileSelected"); 
   } else {
@@ -45,17 +54,37 @@ void setup() {
   
   exVert(s, sf); 
   println("# of vertex: " + ve.size()); 
-  
-  background(bgColor);
-  shape(s,0,0);
 } 
 
-void draw(){
+void draw() {
+  if (firstRun) {
+    alphaImg.beginDraw();    
+    // make sure its alpha is set to 0
+    alphaImg.loadPixels();
+    for(int i=0;i<alphaImg.pixels.length;i++){
+      alphaImg.pixels[i] = color(0,0);
+    }
+    alphaImg.updatePixels();
+    //~~
+    // draw into the pgraphics object
+    shapeMode(CORNER);
+    alphaImg.shape(s,0,0);
+    alphaImg.endDraw();
+    
+    //imageMode(CORNER);
+    //grab = alphaImg.get(0,0,width,height);
+    
+    //shape(s,0,0);
+    //grab = get(0,0,width,height);
+    firstRun = false;
+  }
+ 
   //background(bgColor);
   //stroke(255,0,0);
   //strokeWeight(2);
+  
   if(ready){ 
-    if (nve < ve.size()) { 
+    while (nve < ve.size()) { 
       //replaced with distLimit check...we want to keep looking for paths
       //if(((Point) ve.get(nve)).z != -10.0) {// a way to separate distinct paths 
         PVector p1 = new PVector(((Point) ve.get(nve-1)).x, ((Point) ve.get(nve-1)).y);
@@ -99,24 +128,48 @@ void draw(){
         //ellipse( ((Point) ve.get(nve)).x, ((Point) ve.get(nve)).y, 2, 2 ); 
         nve++; 
       //}
-    } else { // restart drawing 
+    }
+    /*
+    else { // restart drawing 
       background(200); 
       nve = 1; 
-    } 
+    }*/
+  }
+  if (saveFile) {
+    alphaImg.save("foo.png");
+    exit();
   }
 } 
 
-void doBrush(PVector p, float b, boolean scatter, color c) {
-  pushMatrix();
-  tint(c);
+void doBrush(PVector p, float _b, boolean scatter, color c) {
+  alphaImg.pushMatrix();
+  //int loc = int(p.x + p.y * grab.width);
+  color cc0 = alphaImg.pixels[int((p.x+0) + (p.y+0) * alphaImg.width)];
+  color cc1 = alphaImg.pixels[int((p.x+1) + (p.y+0) * alphaImg.width)];
+  color cc2 = alphaImg.pixels[int((p.x-1) + (p.y+0) * alphaImg.width)];
+  color cc3 = alphaImg.pixels[int((p.x+0) + (p.y+1) * alphaImg.width)];
+  color cc4 = alphaImg.pixels[int((p.x+0) + (p.y-1) * alphaImg.width)];
+  color cc5 = alphaImg.pixels[int((p.x+1) + (p.y+1) * alphaImg.width)];
+  color cc6 = alphaImg.pixels[int((p.x+1) + (p.y-1) * alphaImg.width)];
+  color cc7 = alphaImg.pixels[int((p.x-1) + (p.y+1) * alphaImg.width)];
+  color cc8 = alphaImg.pixels[int((p.x-1) + (p.y-1) * alphaImg.width)];
+  
+  int r = int((red(cc0) + red(cc1) + red(cc2) + red(cc3) + red(cc4) + red(cc5) + red(cc6) + red(cc7) + red(cc8))/9);
+  int g = int((green(cc0) + green(cc1) + green(cc2) + green(cc3) + green(cc4) + green(cc5) + green(cc6) + green(cc7) + green(cc8))/9);
+  int b = int((blue(cc0) + blue(cc1) + blue(cc2) + blue(cc3) + blue(cc4) + blue(cc5) + blue(cc6) + blue(cc7) + blue(cc8))/9);
+  int a = int((alpha(cc0) + alpha(cc1) + alpha(cc2) + alpha(cc3) + alpha(cc4) + alpha(cc5) + alpha(cc6) + alpha(cc7) + alpha(cc8))/9);
+  
   if (scatter) {
-    translate(p.x + random(brushScatter) - random(brushScatter),p.y + random(brushScatter) - random(brushScatter));
+    alphaImg.translate(p.x + random(brushScatter) - random(brushScatter),p.y + random(brushScatter) - random(brushScatter) + random(gravity));
   } else {
-    translate(p.x,p.y);
+    alphaImg.translate(p.x,p.y);
   }
-  rotate(radians(random(360)));
-  image(brush,0,0,b,b);
-  popMatrix();
+  alphaImg.rotate(radians(random(360)));
+  alphaImg.tint(r,g,b,a);
+  alphaImg.imageMode(CENTER);
+  alphaImg.image(brush,0,0,_b,_b);
+
+  alphaImg.popMatrix();
 }
 
 
