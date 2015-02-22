@@ -3,132 +3,157 @@
 //to do: 
 //add batching, directory selection, and saving to disk
 
-int sW = 550;
-int sH = 400;
+int sW = 1920;
+int sH = 1080;
 
-PShape s; 
+PShape img; 
 ArrayList ve; 
 int nve = 1;
 float slen = 2.0; // 5.0 max length of segments 
 float sf = 1.0; // 0.8 scale factor for the image 
 String svgFile = "test.svg"; 
 String brushFile = "brush2.png";
-boolean loadNewFile = false;
-boolean ready = false;
 PImage brush;
-int brushSize = 4;
-int brushSizeMin = 1;
-int brushSizeMax = 10;
+int brushSize = 18;
+int brushSizeMin = 5;
+int brushSizeMax = 42;
 float brushRandom = 2;
-float leakRandom = 0.6; //0-1
-float brushScatter = 2;
+float leakRandom = 0.75; //0-1
+float brushScatter = 4;
 color brushColor = color(255, 0, 0, 150);
 boolean useBrushColor = false;
-int alphaOffset = 0;
+int alphaOffset = -50;
 color bgColor = color(155);
-float distLimit = 10.0;//1.95;
-float gravity = 0.0;
+float distLimit = 1.95; //10.0;
+float gravity = 10.01;
 PGraphics alphaImg;
 PGraphics alphaImgOrig;
 boolean firstRun = true;
 int rotCounter = 0;
 boolean useBase = false;
+int counter = 0;
 
 void setup() { 
+  Settings settings = new Settings("settings.txt");
+  if (!filesLoaded) loadFiles();
+  nextImage(counter);
+  sW = (int) img.width;
+  sH = (int) img.height;
   size(sW, sH); 
+
   brush = loadImage(brushFile);
-  alphaImg = createGraphics(width, height, JAVA2D);
-  alphaImgOrig = createGraphics(width, height, JAVA2D);
-
-  ve = new ArrayList(); 
-
+  brush.filter(INVERT);
   frameRate(60); 
-  if (loadNewFile) {
-    selectInput("Select a file to process:", "fileSelected");
-  } else {
-    ready = true;
-  }
-  s = loadShape(svgFile); 
-  s.scale(sf); 
-  smooth(); 
-
-  exVert(s, sf); 
-  println("# of vertex: " + ve.size());
+  smooth();
 } 
 
 void draw() {
-  alphaImg.beginDraw();    
-  if (firstRun) {
-    // make sure its alpha is set to 0
-    alphaImg.loadPixels();
-    for (int i=0; i<alphaImg.pixels.length; i++) {
-      alphaImg.pixels[i] = color(0, 0);
-    }
-    alphaImg.updatePixels();
 
-    shapeMode(CORNER);
-    alphaImg.shape(s, 0, 0);
+    //prep graphics
+    if (firstRun) {
+      prepGraphics();
+      firstRun = false;
+    } else {
 
-    alphaImg.endDraw();
+    while (nve < ve.size ()) { 
+      //replaced with distLimit check...we want to keep looking for paths
+      //if(((Point) ve.get(nve)).z != -10.0) {// a way to separate distinct paths 
+      PVector p1 = new PVector(((Point) ve.get(nve-1)).x, ((Point) ve.get(nve-1)).y);
+      PVector p2 = new PVector(((Point) ve.get(nve)).x, ((Point) ve.get(nve)).y);
 
-    alphaImgOrig = alphaImg;
+      PVector pa = new PVector((p1.x + p2.x)/2, (p1.y + p2.y)/2);
+      PVector pb = new PVector((p1.x + pa.x)/2, (p1.y + pa.y)/2);
+      PVector pc = new PVector((p2.x + pa.x)/2, (p2.y + pa.y)/2);
 
-    firstRun = false;
-  } else {
-    if (ready) { 
-      while (nve < ve.size ()) { 
-        //replaced with distLimit check...we want to keep looking for paths
-        //if(((Point) ve.get(nve)).z != -10.0) {// a way to separate distinct paths 
-        PVector p1 = new PVector(((Point) ve.get(nve-1)).x, ((Point) ve.get(nve-1)).y);
-        PVector p2 = new PVector(((Point) ve.get(nve)).x, ((Point) ve.get(nve)).y);
+      PVector paa = new PVector((pa.x + pb.x)/2, (pa.y + pb.y)/2);
+      PVector pbb = new PVector((pb.x + pc.x)/2, (pb.y + pc.y)/2);
+      PVector pcc = new PVector((pc.x + pa.x)/2, (pc.y + pa.y)/2);
 
-        PVector pa = new PVector((p1.x + p2.x)/2, (p1.y + p2.y)/2);
-        PVector pb = new PVector((p1.x + pa.x)/2, (p1.y + pa.y)/2);
-        PVector pc = new PVector((p2.x + pa.x)/2, (p2.y + pa.y)/2);
+      float bs = 0;
+      float lr = random(1);
+      float dst = dist(p1.x, p1.y, p2.x, p2.y);
 
-        PVector paa = new PVector((pa.x + pb.x)/2, (pa.y + pb.y)/2);
-        PVector pbb = new PVector((pb.x + pc.x)/2, (pb.y + pc.y)/2);
-        PVector pcc = new PVector((pc.x + pa.x)/2, (pc.y + pa.y)/2);
-
-        float bs = 0;
-        float lr = random(1);
-        float dst = dist(p1.x, p1.y, p2.x, p2.y);
-
-        if (lr < leakRandom) {
-          bs = brushSize / dst;
-        } else {
-          bs = brushSize * dst;
-        }
-        if (bs < brushSizeMin) bs = brushSizeMin;
-        if (bs > brushSizeMax) bs = brushSizeMax;
-        bs += random(brushRandom) - random(brushRandom);
-
-        if (dst <= distLimit) {
-          doBrush(p1, bs, false, brushColor);
-          doBrush(p2, bs, false, brushColor);
-
-          doBrush(pa, bs, false, brushColor);
-          doBrush(pb, bs, false, brushColor);
-          doBrush(pc, bs, false, brushColor);
-
-          doBrush(paa, bs, true, brushColor);
-          doBrush(pbb, bs, true, brushColor);
-          doBrush(pcc, bs, true, brushColor);
-        }
-
-        nve++;
+      if (lr < leakRandom) {
+        bs = brushSize / dst;
+      } else {
+        bs = brushSize * dst;
       }
+      if (bs < brushSizeMin) bs = brushSizeMin;
+      if (bs > brushSizeMax) bs = brushSizeMax;
+      bs += random(brushRandom) - random(brushRandom);
+
+      if (dst <= distLimit) {
+        doBrush(p1, bs, false, brushColor);
+        doBrush(p2, bs, false, brushColor);
+
+        doBrush(pa, bs, false, brushColor);
+        doBrush(pb, bs, false, brushColor);
+        doBrush(pc, bs, false, brushColor);
+
+        doBrush(paa, bs, true, brushColor);
+        doBrush(pbb, bs, true, brushColor);
+        doBrush(pcc, bs, true, brushColor);
+      }
+
+      nve++;
     }
+
     alphaImg.endDraw();
     image(alphaImg, 0, 0);
-  }
+
+    if (counter<imgNames.size()-1) {
+      saveGraphics(alphaImg, false); //don't exit
+      counter++;
+      nextImage(counter);
+      prepGraphics();
+    } else {
+      saveGraphics(alphaImg, true); //exit
+    }
+    }
+
 } 
 
+void prepGraphics() {
+  nve=1;
+  alphaImg = createGraphics(width, height, JAVA2D);
+  alphaImgOrig = createGraphics(width, height, JAVA2D);  
+  ve = new ArrayList(); 
+  //String target = (String) imgNames.get(counter);
+  //img = loadShape(target); 
+  img.scale(sf); 
+  exVert(img, sf); 
+  println("# of vertex: " + ve.size());
+  
+  alphaImg.beginDraw();    
+  // make sure its alpha is set to 0
+  alphaImg.loadPixels();
+  for (int i=0; i<alphaImg.pixels.length; i++) {
+    alphaImg.pixels[i] = color(0, 0);
+  }
+  alphaImg.updatePixels();
+  shapeMode(CORNER);
+  alphaImg.shape(img, 0, 0);
+  alphaImg.endDraw();
+
+  alphaImgOrig.beginDraw();    
+  alphaImgOrig.loadPixels();
+  for (int i=0; i<alphaImgOrig.pixels.length; i++) {
+    alphaImgOrig.pixels[i] = color(0, 0);
+  }
+  alphaImgOrig.updatePixels();
+  alphaImgOrig.image(alphaImg,0,0);
+  alphaImgOrig.endDraw();
+
+  firstRun = false;
+}
+
 void doBrush(PVector p, float _b, boolean scatter, color c) {
+
   alphaImg.pushMatrix();
   //int loc = int(p.x + p.y * grab.width);
   color cc0, cc1, cc2, cc3, cc4, cc5, cc6, cc7, cc8;
-  if (useBase) {
+
+  if (useBase) { 
     cc0 = alphaImgOrig.pixels[int((p.x+0) + (p.y+0) * alphaImgOrig.width)];
     cc1 = alphaImgOrig.pixels[int((p.x+1) + (p.y+0) * alphaImgOrig.width)];
     cc2 = alphaImgOrig.pixels[int((p.x-1) + (p.y+0) * alphaImgOrig.width)];
@@ -147,7 +172,7 @@ void doBrush(PVector p, float _b, boolean scatter, color c) {
     cc5 = alphaImg.pixels[int((p.x+1) + (p.y+1) * alphaImg.width)];
     cc6 = alphaImg.pixels[int((p.x+1) + (p.y-1) * alphaImg.width)];
     cc7 = alphaImg.pixels[int((p.x-1) + (p.y+1) * alphaImg.width)];
-    cc8 = alphaImg.pixels[int((p.x-1) + (p.y-1) * alphaImg.width)];    
+    cc8 = alphaImg.pixels[int((p.x-1) + (p.y-1) * alphaImg.width)];
   }
   int r = int((red(cc0) + red(cc1) + red(cc2) + red(cc3) + red(cc4) + red(cc5) + red(cc6) + red(cc7) + red(cc8))/9);
   int g = int((green(cc0) + green(cc1) + green(cc2) + green(cc3) + green(cc4) + green(cc5) + green(cc6) + green(cc7) + green(cc8))/9);
@@ -173,19 +198,22 @@ void doBrush(PVector p, float _b, boolean scatter, color c) {
   alphaImg.image(brush, 0, 0, _b, _b);
 
   alphaImg.popMatrix();
+
+
 }
 
 
+/*
 void fileSelected(File selection) {
-  if (selection == null) {
-    println("Window was closed or the user hit cancel.");
-  } else {
-    svgFile = selection.getAbsolutePath();
-    println("User selected " + svgFile);
-    ready = true;
-  }
-}
-
+ if (selection == null) {
+ println("Window was closed or the user hit cancel.");
+ } else {
+ svgFile = selection.getAbsolutePath();
+ println("User selected " + svgFile);
+ ready = true;
+ }
+ }
+ */
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 // recursively find PShape children and trigger function to get existing vertex and fill-in vertex 
 // 

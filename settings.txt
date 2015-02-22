@@ -1,0 +1,46 @@
+Passes Per Image
+200
+
+Points Per Pass
+1000
+
+Strokes Per Point
+1
+
+Stroke Length
+10
+
+Scatter
+4
+
+Save Filename
+frame
+
+Brush Filename
+brush5
+
+Brush Alpha Decrease
+200
+
+Brush Size
+20
+
+Brush Minimum
+5
+
+Brush Maximum
+40
+
+Brush Shrink Amount
+0.99 
+
+Leak Chance
+0.1
+
+Clean Outlines
+false
+
+Use Base Image
+false
+
+  
