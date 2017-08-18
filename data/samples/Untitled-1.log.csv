@@ -1,0 +1,31 @@
+Operation,Total Time,Average Time,Run Count
+extensible.SVG(),8062,8062,1
+extensible.SVG.doInit(),0,0,2
+extensible.SVG.doNextTimeline(),1083,67.6875,16
+extensible.SVG._getTimeline(),1238,26.91304347826087,46
+extensible.SVG._getTimeline() >> Check break apart tweens,404,25.25,16
+extensible.SVG._getTimeline() >> Get frame items,6,0.09836065573770492,61
+extensible.SVG._getShape(),4306,130.4848484848485,33
+extensible.Contour.getEdges(),725,7.631578947368421,95
+HalfEdge getEdge.,178,0.015897115298740733,11197
+HalfEdge getNext.,180,0.016075734571760293,11197
+extensible.SVG._getContour(),3540,45.38461538461539,78
+extensible.Contour.getControlPoints() >> Point Lookup,2301,47.9375,48
+Extensible.Edge.get cubicSegmentIndex,682,0.18269488347173854,3733
+extensible.Contour.getControlPoints() >> gather curve,1255,0.33619073131529603,3733
+Edge getControl.,1,0.010309278350515464,97
+Extensible.Shape.getCubicSegmentPoints(),1237,0.3342339908132937,3701
+extensible.Contour.getControlPoints() >> Order Check,1007,20.979166666666668,48
+extensible.SVG._getCurve(),64,0.8205128205128205,78
+extensible.SVG._getFill(),7,0.08974358974358974,78
+extensible.SVG._getSymbolInstance(),247,7.967741935483871,31
+extensible.Fill.is(),0,0,46
+extensible.SVG.checkExpand(),998,30.242424242424242,33
+extensible.SVG.executeExpandUse(),0,0,31
+extensible.SVG.processFinaliseDocuments(),808,404,2
+extensible.SVG.applyMatrices(),786,23.818181818181817,33
+extensible.SVG._applyColorEffects(),0,0,48
+extensible.SVG.processFixUseLinks(),12,0.75,16
+extensible.SVG.processCompactColours(),0,0,16
+extensible.SVG.processRemoveIdentMatrices(),2,0.125,16
+extensible.SVG.processConvertHairlineStrokes(),2,0.125,16

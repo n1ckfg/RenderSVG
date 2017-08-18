@@ -80,7 +80,7 @@ void openAppFolderHandler(){
   if(System.getProperty("os.name").equals("Mac OS X")){
     try{
       print("Trying OS X Finder method.");
-      open(sketchPath(openFilePath));
+      //open(sketchPath(openFilePath));
       //open(sketchPath("ManosOsc.app/Contents/Resources/Java/" + openFilePath));
     }catch(Exception e){ }
   }else{

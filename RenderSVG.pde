@@ -32,14 +32,16 @@ boolean firstRun = true;
 int rotCounter = 0;
 boolean useBase = false;
 int counter = 0;
+Settings settings;
 
 void setup() { 
-  Settings settings = new Settings("settings.txt");
+  size(50, 50); 
+  settings = new Settings("settings.txt");
   if (!filesLoaded) loadFiles();
   nextImage(counter);
   sW = (int) img.width;
   sH = (int) img.height;
-  size(sW, sH); 
+  surface.setSize(sW, sH);
 
   brush = loadImage(brushFile);
   brush.filter(INVERT);
@@ -282,4 +284,3 @@ class Point {
     this.z = z;
   }
 } 
-

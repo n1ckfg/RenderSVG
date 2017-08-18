@@ -1,28 +1,27 @@
 class Settings {
 
-  Data settings;
+  String[] data;
 
   Settings(String _s) {
     try {
-      settings = new Data();
-      settings.load(_s);
-      for (int i=0;i<settings.data.length;i++) {
+      data = loadStrings(_s);
+      for (int i=0;i<data.length;i++) {
         /*
-        if (settings.data[i].equals("Points Per Pass")) numDrawers = setInt(settings.data[i+1]);
-        if (settings.data[i].equals("Strokes Per Point")) numDrawerReps = setInt(settings.data[i+1]);
-        if (settings.data[i].equals("Stroke Length")) numStrokes = setInt(settings.data[i+1]);
-        if (settings.data[i].equals("Passes Per Image")) numRepsMax = setInt(settings.data[i+1]);
-        if (settings.data[i].equals("Save Filename")) fileName = setString(settings.data[i+1]);
-        if (settings.data[i].equals("Brush Filename")) brushFile = setString(settings.data[i+1]);
-        if (settings.data[i].equals("Brush Alpha Decrease")) alphaDecrease = setInt(settings.data[i+1]);
-        if (settings.data[i].equals("Brush Size")) brushSizeOrig = setFloat(settings.data[i+1]);
-        if (settings.data[i].equals("Brush Minimum")) brushSizeMin = setFloat(settings.data[i+1]);
-        if (settings.data[i].equals("Brush Maximum")) brushSizeMax = setFloat(settings.data[i+1]);
-        if (settings.data[i].equals("Leak Chance")) leakRandom = setFloat(settings.data[i+1]);
-        if (settings.data[i].equals("Scatter")) scatter = setFloat(settings.data[i+1]);
-        if (settings.data[i].equals("Clean Outlines")) cleanOutlines = setBoolean(settings.data[i+1]);
-        if (settings.data[i].equals("Use Base Image")) useBase = setBoolean(settings.data[i+1]);
-        if (settings.data[i].equals("Brush Shrink Amount")) shrinkAmount = setFloat(settings.data[i+1]);  
+        if (data[i].equals("Points Per Pass")) numDrawers = setInt(data[i+1]);
+        if (data[i].equals("Strokes Per Point")) numDrawerReps = setInt(data[i+1]);
+        if (data[i].equals("Stroke Length")) numStrokes = setInt(data[i+1]);
+        if (data[i].equals("Passes Per Image")) numRepsMax = setInt(data[i+1]);
+        if (data[i].equals("Save Filename")) fileName = setString(data[i+1]);
+        if (data[i].equals("Brush Filename")) brushFile = setString(data[i+1]);
+        if (data[i].equals("Brush Alpha Decrease")) alphaDecrease = setInt(data[i+1]);
+        if (data[i].equals("Brush Size")) brushSizeOrig = setFloat(data[i+1]);
+        if (data[i].equals("Brush Minimum")) brushSizeMin = setFloat(data[i+1]);
+        if (data[i].equals("Brush Maximum")) brushSizeMax = setFloat(data[i+1]);
+        if (data[i].equals("Leak Chance")) leakRandom = setFloat(data[i+1]);
+        if (data[i].equals("Scatter")) scatter = setFloat(data[i+1]);
+        if (data[i].equals("Clean Outlines")) cleanOutlines = setBoolean(data[i+1]);
+        if (data[i].equals("Use Base Image")) useBase = setBoolean(data[i+1]);
+        if (data[i].equals("Brush Shrink Amount")) shrinkAmount = setFloat(data[i+1]);  
          */   
        }
     } 
@@ -123,4 +122,3 @@ class Settings {
       return endColor;
   }
 }
-

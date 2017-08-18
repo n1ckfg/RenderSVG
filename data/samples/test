@@ -1,0 +1,202 @@
+script_version_number version 10
+artist_name ""
+start_time date Tue, Jul 29, 2014 time 12:12 AM
+start_random 849440198 713621240
+variant "Painter Brushes" "F-X" "Big Wet Luscious"
+penetration_slider 100 percent
+texture "Paper Textures" "<str t=17500 i=001>"
+grain_inverted unchecked
+directional_grain unchecked
+scale_slider    1.00000
+paper_brightness_slider    0.50000
+paper_contrast_slider    1.00000
+portfolio_change ""
+gradation "Painter Gradients.gradients" "<str t=17503 i=001>"
+weaving "Painter Weaves.weaves" "<str t=17504 i=001>"
+pattern_change "Painter Patterns" "<str t=17001 i=001>"
+path_library_change "Painter Selections"
+nozzle_change "Painter Nozzles" "<str t=17000 i=001>"
+use_brush_grid unchecked
+new_tool 1
+gradation_options type 0 order 0 angle    0.00 spirality  1.000
+pattern_options pattern_type 1 offset 0.594
+preserve_transparency unchecked
+wind_direction 4.712389
+color red 56 green 44 blue 44
+background_color red 0 green 0 blue 0
+stroke_start
+pnt x  495.00 y  487.00 time 611035 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  492.00 y  486.00 time 611036 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  488.50 y  484.50 time 611037 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  485.75 y  483.25 time 611038 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  483.88 y  481.62 time 611039 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  482.44 y  478.81 time 611040 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  481.72 y  474.91 time 611041 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  481.36 y  471.45 time 611042 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  482.18 y  468.23 time 611043 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  486.09 y  466.11 time 611044 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  491.54 y  465.05 time 611045 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  497.77 y  464.53 time 611046 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  504.38 y  465.26 time 611047 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  509.19 y  467.13 time 611048 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  512.09 y  470.56 time 611049 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  513.55 y  475.28 time 611050 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  514.27 y  479.64 time 611051 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  514.64 y  483.82 time 611052 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  513.82 y  487.41 time 611053 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  511.91 y  490.70 time 611054 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  509.45 y  493.35 time 611055 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  506.72 y  495.67 time 611056 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  504.86 y  497.34 time 611057 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  503.43 y  498.17 time 611058 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  502.71 y  498.08 time 611074 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  502.36 y  496.54 time 611075 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  503.18 y  492.77 time 611076 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  506.09 y  485.38 time 611077 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  509.54 y  477.19 time 611078 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  513.27 y  467.09 time 611079 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  517.63 y  457.55 time 611080 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  521.82 y  449.77 time 611081 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  526.41 y  443.38 time 611082 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  530.70 y  438.19 time 611083 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  534.35 y  434.59 time 611084 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  537.67 y  432.30 time 611085 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  540.34 y  431.15 time 611086 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  542.67 y  430.07 time 611087 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  542.67 y  430.07 time 611087 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+stroke_end
+stroke_start
+pnt x  571.00 y  441.00 time 611113 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  570.50 y  441.50 time 611113 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  569.75 y  441.75 time 611114 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  568.88 y  441.88 time 611115 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  565.94 y  440.44 time 611116 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  562.97 y  436.72 time 611117 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  560.48 y  430.86 time 611118 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  559.24 y  422.93 time 611119 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  558.62 y  410.46 time 611120 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  558.31 y  397.73 time 611121 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  560.15 y  387.36 time 611122 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  565.07 y  378.18 time 611123 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  572.04 y  371.09 time 611124 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  581.02 y  367.04 time 611125 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  590.01 y  365.02 time 611126 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  596.50 y  364.01 time 611127 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  601.75 y  365.00 time 611128 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  604.88 y  368.50 time 611129 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  606.44 y  371.75 time 611130 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  607.22 y  375.38 time 611131 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  605.61 y  378.69 time 611132 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  602.30 y  380.84 time 611133 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  597.65 y  381.92 time 611134 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  592.82 y  380.46 time 611135 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  588.41 y  375.73 time 611136 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  585.70 y  367.86 time 611137 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  584.35 y  359.43 time 611138 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  583.68 y  350.72 time 611139 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  585.34 y  343.36 time 611140 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  588.67 y  337.18 time 611141 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  591.83 y  333.09 time 611142 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  595.91 y  329.54 time 611143 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  600.96 y  326.27 time 611144 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  605.48 y  324.13 time 611145 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  610.24 y  321.07 time 611146 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  614.12 y  319.03 time 611147 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  617.56 y  317.52 time 611148 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  620.28 y  316.26 time 611149 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  621.64 y  315.13 time 611150 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  621.64 y  315.13 time 611150 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+stroke_end
+stroke_start
+pnt x  664.00 y  309.00 time 611169 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  664.00 y  308.50 time 611171 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  663.50 y  308.25 time 611172 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  661.25 y  308.12 time 611173 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  656.12 y  308.06 time 611174 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  650.56 y  308.03 time 611175 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  644.78 y  306.02 time 611176 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  639.39 y  302.01 time 611177 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  636.20 y  295.00 time 611178 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  634.60 y  283.50 time 611179 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  634.30 y  272.75 time 611180 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  637.65 y  263.88 time 611181 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  644.82 y  256.94 time 611182 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  656.91 y  252.97 time 611183 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  667.95 y  250.98 time 611184 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  677.48 y  250.49 time 611185 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  685.24 y  252.25 time 611186 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  690.12 y  255.62 time 611187 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  692.56 y  258.81 time 611188 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  693.78 y  261.40 time 611189 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  693.89 y  262.70 time 611191 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  693.94 y  262.35 time 611192 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  693.97 y  260.68 time 611193 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  695.98 y  258.84 time 611194 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  701.99 y  257.42 time 611195 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  709.00 y  256.71 time 611196 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  717.50 y  258.85 time 611197 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  724.75 y  261.93 time 611198 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  730.87 y  265.46 time 611199 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  734.94 y  268.23 time 611200 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  737.47 y  270.61 time 611201 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  739.23 y  271.80 time 611202 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  739.62 y  273.90 time 611204 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  738.81 y  274.95 time 611205 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  737.40 y  275.47 time 611206 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  736.20 y  275.73 time 611207 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  735.10 y  276.87 time 611208 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  734.05 y  280.93 time 611209 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  732.52 y  288.46 time 611210 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  728.76 y  300.23 time 611211 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  723.88 y  313.62 time 611212 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  717.44 y  327.81 time 611213 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  710.22 y  339.90 time 611214 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  703.11 y  351.45 time 611215 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  697.55 y  361.22 time 611216 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  694.28 y  369.61 time 611217 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  692.64 y  378.30 time 611218 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  691.82 y  387.15 time 611219 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  692.91 y  396.07 time 611220 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  694.45 y  406.53 time 611221 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  695.73 y  417.27 time 611222 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  696.36 y  427.63 time 611223 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  696.68 y  436.82 time 611224 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  695.84 y  442.91 time 611225 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  694.42 y  445.45 time 611228 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  693.71 y  447.23 time 611230 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  693.35 y  449.61 time 611231 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  692.17 y  453.30 time 611232 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  687.59 y  457.15 time 611233 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  680.79 y  461.57 time 611234 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  672.40 y  463.79 time 611235 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  663.20 y  461.89 time 611236 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  657.10 y  454.44 time 611237 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  654.05 y  444.72 time 611238 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  652.52 y  434.36 time 611239 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  653.26 y  426.18 time 611240 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  658.63 y  420.59 time 611241 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  666.32 y  417.79 time 611242 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  673.65 y  418.89 time 611243 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  680.33 y  424.95 time 611244 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  685.16 y  435.47 time 611245 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  687.58 y  448.23 time 611246 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  688.79 y  458.12 time 611247 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  688.39 y  465.06 time 611248 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  689.69 y  469.03 time 611251 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  694.85 y  471.01 time 611252 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  704.92 y  474.01 time 611253 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  717.46 y  482.00 time 611254 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  727.73 y  491.00 time 611255 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  736.36 y  503.50 time 611256 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  742.18 y  516.75 time 611257 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  745.59 y  528.87 time 611258 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  747.29 y  538.43 time 611259 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  747.65 y  545.22 time 611260 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  746.32 y  550.11 time 611261 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  744.66 y  553.55 time 611262 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  741.83 y  555.77 time 611263 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  737.91 y  556.89 time 611264 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  732.46 y  557.44 time 611265 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+pnt x  732.46 y  557.44 time 611265 prs 1.00 tlt 0.00 brg 0.00 whl 1.00 rot 0.00
+stroke_end
+end_time date Tue, Jul 29, 2014 time 12:12 AM
